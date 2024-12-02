@@ -35,10 +35,11 @@ var reviewCmd = &cobra.Command{
 		client := openai.NewClientWithConfig(config)
 
 		// プロンプトの作成
-		prompt := fmt.Sprintf(`You are a code reviewer. Please review the following code and provide feedback on:
-- Potential bugs
-- Code style issues
-- Suggestions for improvement.
+		prompt := fmt.Sprintf(`
+あなたはコードレビュアーです。次のコードを確認し、以下についてフィードバックをください。
+- 潜在的なバグ
+- コードスタイルの問題
+- 改善のための提案。
 
 Code:
 %s`, string(code))
